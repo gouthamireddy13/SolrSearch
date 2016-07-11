@@ -1,0 +1,15 @@
+{	
+	"active" : "staging",
+
+	"default" :{
+		"url": "http:.//1/"
+	},
+
+	"staging" :{
+		"url": "http:.//2/"
+	},
+
+	"production" :{
+		"url": "http:.//3/"
+	}
+}

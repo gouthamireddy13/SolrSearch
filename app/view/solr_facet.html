@@ -1,0 +1,18 @@
+<div class="row" style="padding-top:0px">
+	<div class="col-md-12">
+
+		<h5 ng-bind="ctrl.displayName()"></h5>
+
+		<div ng-class="ctrl.class">
+			<ul style="margin-bottom:0; padding-left:20px;">
+				<li ng-repeat="(k, v)  in ctrl.values">
+					<solr-facet-result field="ctrl.field" key="{{k}}" count="{{v}}" ng-if="v"></solr-facet-result>
+				</li>
+			</ul>
+		</div>
+
+		<a class="cursor-pointer" ng-click="ctrl.changeClass()" ng-show="ctrl.showAllFlag"> <small>show all...</small></a>
+
+	</div>
+</div>
+

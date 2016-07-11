@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-3" >
+        <solr-selected selected-items-array="ctrl.selectedItemsArray" ng-show="ctrl.showSelected">
+        </solr-selected>
+
+        <div ng-repeat="(field, values)  in ctrl.facet_fields">
+            <solr-facet  field="field" values="values"></solr-facet>
+            <hr class="masthead-hr">
+        </div>
+    </div>
+
+    <div class="col-md-9" >
+        <div class="row">
+            <div class="col-md-12">
+                <solr-search preload='true' data-search="ctrl.search();"></solr-search>
+            </div>
+        </div>
+         <div class="row" ng-show="ctrl.docs.length">
+            <div class="col-md-12">
+                <div class="results">
+                <h6 > About {{ctrl.numFound}} results in ({{ctrl.queryTime/1000}} seconds)</h6>
+                </div>
+                <ul class="list-unstyled">
+                    <li dir-paginate="doc in ctrl.docs | itemsPerPage:ctrl.itemsPerPage" current-page="ctrl.currentPage" total-items="ctrl.totalItems">
+                        <result-document record="doc" search-text="ctrl.searchText"></result-document>
+                    </li>
+                </ul>
+                <div class="text-center">
+
+                    <dir-pagination-controls
+                       max-size="10"
+                       direction-links="true"
+                       boundary-links="true"
+                       on-page-change="ctrl.pageChanged(newPageNumber)" >
+                    </dir-pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

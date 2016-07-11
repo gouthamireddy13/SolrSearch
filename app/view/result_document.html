@@ -1,0 +1,9 @@
+<div class="panel-body no-padding bottom-10">
+    <a class="cursor-pointer"  data-ng-click="ctrl.renderImage(ctrl.doc.id)">
+    {{ctrl.doc.id}}
+    </a>
+    <br/>
+    <span ng-show="!ctrl.viewContentFlag" ng-bind-html="ctrl.showView(ctrl.doc.content) | highlight:ctrl.searchText" ng-class="ctrl.class"></span>
+    <span ng-show="ctrl.viewContentFlag" ng-bind-html="ctrl.doc.content | highlight:ctrl.searchText" ng-class="ctrl.class"></span>
+    &nbsp; <a ng-show="ctrl.viewMoreFlag" ng-click="ctrl.changeView()" class="cursor-pointer"><small>{{ctrl.showLabel}}..</small></a>
+</div>

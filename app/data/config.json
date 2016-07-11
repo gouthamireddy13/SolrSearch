@@ -1,0 +1,10 @@
+{
+	
+	"default" : {
+		"url" : "http://192.168.1.61:8983/solr/hpfcollection/browse"
+	},
+
+	"production" : {
+		"url" : "http://192.168.1.61:8983/solr/hpfcollection/browse"
+	}
+}
